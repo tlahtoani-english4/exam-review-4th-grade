@@ -50,6 +50,10 @@ mark.o{background:#FFC857}mark.p{background:#FFB3C7}mark.b{background:#A9DDFF}
 .pair div small{display:block;color:var(--ink-soft);font-weight:800}
 .nav{display:flex;justify-content:space-between;gap:8px;margin-top:14px}
 .dots{display:flex;gap:6px;justify-content:center;margin:14px 0 0}.dots i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.25)}.dots i.on{background:var(--lime)}
+.tabs{display:flex;gap:6px;margin-top:12px}.tabs button{flex:1;min-height:46px;border:0;border-radius:14px;background:#E6DFCB;color:var(--ink);font:900 .85rem var(--font-display);cursor:pointer}.tabs button.on{background:var(--navy);color:#fff}
+.tg{display:flex;align-items:center;gap:10px;margin-top:12px;font:900 .9rem var(--font-display)}.sw{border:0;border-radius:99px;min-height:44px;padding:0 18px;background:linear-gradient(180deg,var(--orange1),var(--orange2));color:var(--navy-deep);font:900 .9rem var(--font-display);cursor:pointer}.sw.off{background:#D8D0BA;color:var(--ink)}
+.wl{display:grid;gap:8px;margin-top:10px}.w{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:center;background:#fff;border-radius:14px;padding:10px 14px;font-weight:900;font-size:1.1rem;animation:pop .4s both}
+.w .e{color:var(--ink);overflow-wrap:anywhere}.w .s{color:#7A4420;font-weight:800;font-size:1rem;overflow-wrap:anywhere}.w .s.hid{background:#EFE8D6;border-radius:8px;color:transparent;user-select:none;cursor:pointer;min-height:1.4em}
 footer{text-align:center;color:var(--on-navy-soft);font-size:.8rem;margin-top:24px}
 [hidden]{display:none!important}
 @keyframes pop{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
@@ -113,15 +117,38 @@ const T=[
  blocks:[["Regular verbs","Add <b>-ed</b>. If it ends in e, add only <b>-d</b>.","Agrega -ed. Si termina en e, solo -d.",[["walk → <mark>walked</mark>","wash → <mark>washed</mark>"],["call → <mark>called</mark>","dance → <mark>danced</mark>"]]],
          ["Irregular verbs 🌟","They change! You must remember them.","Cambian. ¡Hay que memorizarlos!",[["go → <mark class='o'>went</mark>","eat → <mark class='o'>ate</mark>"],["see → <mark class='o'>saw</mark>","come → <mark class='o'>came</mark>"],["run → <mark class='o'>ran</mark>","sing → <mark class='o'>sang</mark>"],["give → <mark class='o'>gave</mark>","buy → <mark class='o'>bought</mark>"]]],
          ["To be in the past","I / he / she / it → <mark class='b'>was</mark> · We / you / they → <mark class='b'>were</mark>","Pasado de am/is/are",[["I <mark class='b'>was</mark> at home.","They <mark class='b'>were</mark> happy."]]]],
- rem:["Check your book, pages 95 and 96!","¡Revisa las páginas 95 y 96 de tu libro!"]}
+ rem:["Check your book, pages 95 and 96!","¡Revisa las páginas 95 y 96 de tu libro!"]},
+{c:"#B4F0C8",em:"📖",t:"Vocabulary",s:"Lessons 1 to 4 · Vocabulario",vocab:true}
 ];
+const VOC=[{"w": "stories", "es": "historias"}, {"w": "knights", "es": "caballeros"}, {"w": "stripes", "es": "rayas"}, {"w": "countryside", "es": "campo / zona rural"}, {"w": "mysterious", "es": "misterioso(a)"}, {"w": "quiet", "es": "silencioso, tranquilo"}, {"w": "kilts", "es": "kilts (faldas escocesas)"}, {"w": "plaid", "es": "de cuadros (escocés)"}, {"w": "castle", "es": "castillo"}, {"w": "official", "es": "oficial"}, {"w": "guards", "es": "guardias"}, {"w": "siblings", "es": "hermanos(as)"}, {"w": "capital", "es": "capital"}, {"w": "look after", "es": "cuidar de"}, {"w": "languages", "es": "idiomas"}, {"w": "accent", "es": "acento"}, {"w": "environment", "es": "medio ambiente"}, {"w": "patterns", "es": "patrones, diseños"}, {"w": "everyday", "es": "diario, cotidiano"}, {"w": "classics", "es": "clásicos"}, {"w": "nonfiction", "es": "no ficción"}, {"w": "compare", "es": "comparar"}, {"w": "distinct", "es": "distinto, único"}, {"w": "tricky", "es": "difícil, complicado"}, {"w": "borrowed", "es": "prestado (de borrow)"}, {"w": "pronunciation", "es": "pronunciación"}, {"w": "arrived", "es": "llegó (de arrive)"}, {"w": "independence", "es": "independencia"}, {"w": "wool", "es": "lana"}, {"w": "calf", "es": "becerro"}, {"w": "herd", "es": "manada, rebaño"}, {"w": "waterproof", "es": "impermeable"}, {"w": "trained", "es": "entrenó (de train)"}, {"w": "hiding", "es": "escondiéndose"}, {"w": "shaggy", "es": "peludo, desaliñado"}, {"w": "shepherd", "es": "pastor"}, {"w": "tiny", "es": "diminuto, pequeñito"}, {"w": "loyal", "es": "leal"}, {"w": "unusual", "es": "inusual, raro"}, {"w": "gentle", "es": "gentil, suave"}, {"w": "wolves", "es": "lobos"}, {"w": "fierce", "es": "feroz"}, {"w": "uncover", "es": "descubrir, destapar"}, {"w": "tapestry", "es": "tapiz"}, {"w": "stage", "es": "escenario"}, {"w": "musician", "es": "músico(a)"}, {"w": "journey", "es": "viaje"}, {"w": "marvelous", "es": "maravilloso(a)"}, {"w": "glowed", "es": "brilló (de glow)"}, {"w": "set off", "es": "salir, ponerse en camino"}, {"w": "daring", "es": "atrevido(a), valiente"}, {"w": "cozy", "es": "acogedor, calientito"}, {"w": "harp", "es": "arpa"}, {"w": "grin", "es": "sonrisa amplia"}, {"w": "sunset", "es": "atardecer, puesta de sol"}, {"w": "choir", "es": "coro"}];
 const $=id=>document.getElementById(id);
+let VL=0,VP=false;
 $('grid').innerHTML=T.map((t,i)=>`<button class="tile" style="background:${t.c};animation-delay:${i*50}ms" data-i="${i}"><span class="em" aria-hidden="true">${t.em}</span><span class="n">${String.fromCharCode(65+i)}</span><span class="t">${t.t}</span><span class="s">${t.s}</span></button>`).join('');
 $('grid').addEventListener('click',e=>{const b=e.target.closest('.tile');if(b)open(+b.dataset.i);});
 const cells=rows=>rows.flatMap(r=>(r.length===2&&!/<mark|→/.test(r[1]))?[{h:r[0],c:r[1]}]:r.map(h=>({h,c:''})));
 const grid=rows=>`<div class="pair">${cells(rows).map(x=>`<div>${x.h}${x.c?`<small>${x.c}</small>`:''}</div>`).join('')}</div>`;
+function vocabBody(){
+  const ws=VOC.slice(VL*14,VL*14+14);
+  return `<div class="tabs">${[1,2,3,4].map((n,k)=>`<button data-l="${k}" class="${k===VL?'on':''}">Lesson ${n}</button>`).join('')}</div>
+  <div class="tg"><button class="sw ${VP?'':'off'}" id="pr">${VP?'Practice: ON':'Practice: OFF'}</button><span style="color:var(--ink-soft)">${VP?'Tap the gray box to see the meaning':'Hide the Spanish to test yourself'}</span></div>
+  <div class="wl">${ws.map((w,j)=>`<div class="w" style="animation-delay:${j*25}ms"><span class="e">${w.w}</span><span class="s ${VP?'hid':''}" ${VP?'tabindex="0" role="button" aria-label="Show meaning"':''}>${w.es}</span></div>`).join('')}</div>`;
+}
+function bindVocab(){
+  document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{VL=+b.dataset.l;$('vb').innerHTML=vocabBody();bindVocab();});
+  $('pr').onclick=()=>{VP=!VP;$('vb').innerHTML=vocabBody();bindVocab();};
+  document.querySelectorAll('.s.hid').forEach(e=>{e.onclick=()=>e.classList.remove('hid');e.onkeydown=ev=>{if(ev.key==='Enter'||ev.key===' ')e.classList.remove('hid')}});
+}
 function open(i){
   const t=T[i];
+  if(t.vocab){
+    $('view').innerHTML=`<div class="page"><div class="top"><button class="btn g" id="bk">← Topics</button><span style="align-self:center;font:900 .9rem var(--font-display);color:var(--on-navy-soft)">${i+1} / ${T.length}</span></div>
+    <div class="hd" style="background:${t.c}"><span class="em" aria-hidden="true">${t.em}</span><div><h2>${t.t}</h2><p>Vocabulario · 56 words</p></div></div>
+    <div class="body"><div class="blk"><span class="lab">Study the words · Estudia las palabras</span><p class="en">Learn the meaning and the spelling.</p><p class="sp">Aprende el significado y cómo se escriben.</p></div><div id="vb">${vocabBody()}</div></div>
+    <div class="nav"><button class="btn g" id="pv">← Back</button><button class="btn m" id="nx">Finish 🎉</button></div>
+    <div class="dots">${T.map((_,k)=>`<i class="${k===i?'on':''}"></i>`).join('')}</div></div>`;
+    $('home').hidden=true;$('view').hidden=false;window.scrollTo(0,0);bindVocab();
+    $('bk').onclick=home;$('pv').onclick=()=>open(i-1);$('nx').onclick=home;return;
+  }
   $('view').innerHTML=`<div class="page"><div class="top"><button class="btn g" id="bk">← Topics</button><span style="align-self:center;font:900 .9rem var(--font-display);color:var(--on-navy-soft)">${i+1} / ${T.length}</span></div>
   <div class="hd" style="background:${t.c}"><span class="em" aria-hidden="true">${t.em}</span><div><h2>${t.t}</h2><p>${t.s}</p></div></div>
   <div class="body"><div class="blk"><span class="lab">What is it? · ¿Qué es?</span><p class="en">${t.what[0]}</p><p class="sp">${t.what[1]}</p></div>
